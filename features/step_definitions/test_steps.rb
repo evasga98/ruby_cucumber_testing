@@ -14,6 +14,7 @@ When('The user clicks the search button') do
 end
 
 Then('Amazon should return a page with the selected category') do
-  
+  @computer_page = ComputerPage.new(@browser)
+  expect(@computer_page.is_displayed?).to eql(true)
 end
 
