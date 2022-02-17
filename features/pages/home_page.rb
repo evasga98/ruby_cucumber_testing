@@ -3,23 +3,20 @@ class HomePage
   attr_reader :browser
 
   SELECT_LIST = {id: 'searchDropdownBox'}
-  OPTION = 'search-alias=computers-intl-ship'
   SEARCH_BUTTON = {id: 'nav-search-submit-button'}
-
 
   def initialize(browser)
     @browser = browser
   end
   
   def is_displayed?
-    puts browser.title
     browser.title.include?('Amazon.com. Spend less.').should == true
   end
 
-  def select_list
+  def select_list(category)
     drop_down = browser.find_element(SELECT_LIST)
     choose = Selenium::WebDriver::Support::Select.new(drop_down)
-    choose.select_by(:value, OPTION)
+    choose.select_by(:text, category)
   end
 
   def click_search_button
