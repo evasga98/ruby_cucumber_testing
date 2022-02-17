@@ -6,3 +6,7 @@ Before do |scenario|
   @browser.navigate.to 'https://www.amazon.com/?language=en_US'
   @browser.manage.window.maximize
 end
+
+After do |scenario|
+  @browser.quit
+end
