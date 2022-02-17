@@ -7,7 +7,7 @@ class CategoryPage
     end
 
     def is_displayed?(category)
-      browser.title.include?(category).should == true
+      browser.title.include?(category) == true
     end
   
   end

@@ -10,7 +10,7 @@ class HomePage
   end
   
   def is_displayed?
-    browser.title.include?('Amazon.com. Spend less.').should == true
+    browser.title.include?('Amazon.com. Spend less.')  == true
   end
 
   def select_list(category)
